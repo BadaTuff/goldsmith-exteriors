@@ -1,0 +1,10 @@
+# Python cruft
+__pycache__/
+*.pyc
+.DS_Store
+
+# Local dev / QA scaffolding — not part of the deliverable
+preview_server.py
+shot.py
+shot_work.py
+verify.py
