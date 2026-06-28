@@ -28,23 +28,31 @@ python3 -m http.server 8000
 Then open **http://localhost:8000** in your browser.
 Stop it with Ctrl-C when done.
 
-## Deploy to Vercel (when ready)
-This is a static site, so Vercel needs zero config.
-1. `vercel` from this folder (or drag-drop the folder in the dashboard), **or** push to a Git repo and import it.
-2. No build command, output dir = project root.
-3. Add the custom domain in Vercel → Settings → Domains.
+## Live
+- **Production:** https://goldsmith-exteriors.vercel.app
+  (Vercel project `goldsmith-exteriors`, team `bt-uff-security-s-projects`)
+- **Custom domain:** `goldsmithexteriors.com` + `www` are added to the project. They go
+  live once Namecheap DNS points at Vercel — `A @ → 76.76.21.21` and
+  `CNAME www → cname.vercel-dns.com`. HTTPS auto-provisions after DNS resolves.
+- **Redeploy:** `vercel --prod --yes --scope bt-uff-security-s-projects` from this folder.
+  Static site, zero config.
+- GitHub Pages was retired in favor of Vercel.
 
-## The remaining 10% (what to collect from the owner)
-- [ ] **Real logo file** → `assets/`, then wire favicon + swap the inline SVG mark if desired
-- [ ] **Before/after + job photos** → swap the `.ba__pane` backgrounds and `.media-card` placeholders (biggest visual upgrade)
-- [ ] **Owner story** (the recording) → replace placeholder copy in `about.html`
-- [ ] **Exact service list + wording** → verify against the flyer (`<!-- TODO -->` markers in `services.html` / `index.html`)
-- [ ] **Lead email** → replace `hello@goldsmithexteriors.com` everywhere
-- [ ] **True service-area radius** → confirm town list in `index.html`
-- [ ] **Hours** → confirm in `contact.html`
+## Backlog — collect from the owner, then patch in
+Photo slots were removed from the **live** site so nothing reads as unfinished.
+The original slot markup is preserved on the **`photos-pending`** branch — when the
+photos land, restore/fill from there and redeploy.
+- [ ] **Hero + owner/crew photos** → real images for the home hero, "Why Goldsmith", and the about hero (slots on `photos-pending`)
+- [x] **Real before/after job photos** → the shed demo/haul-away pair is live on the home page
+- [x] **Logo + favicon** → wired (`assets/logo-mark.png`, `logo-lockup.png`, `favicon.png`)
+- [ ] **Owner story** → replace the generic about-page copy with the owner's real words (TODO markers in `about.html`)
+- [ ] **Exact service list + wording** → verify against the flyer (TODO markers in `services.html` / `index.html`)
+- [ ] **True service-area radius** → confirm the town list in `index.html`
+- [ ] **Hours** → confirm in `contact.html` (currently "Mon–Sat, 8am–6pm")
 - [ ] **Guarantee wording** → confirm the callout claim on `index.html`
-- [ ] **Licensed/insured?** → only add that claim if it's true (intentionally left off)
-- [ ] **Quote form** → wire to Web3Forms/Formspree endpoint (no backend needed) — until then, call/text/email are the live path
+- [ ] **Licensed/insured?** → only add if true (intentionally left off)
+- [ ] **Quote form** → optional: wire to Web3Forms/Formspree (no backend); call/text is the live path
+- [ ] **Lead email** → optional: add a contact email if the owner wants typed leads
 
 ## Brand tokens (in css/styles.css `:root`)
 - bg `#0A0E13` · cyan `#2FC9EC` (water) · green `#29C46E` (CTA) · gold `#E8C079` (Goldsmith accent)
