@@ -3,6 +3,9 @@ __pycache__/
 *.pyc
 .DS_Store
 
+# Vercel CLI project linkage (IDs, not secrets — but not part of the deliverable)
+.vercel/
+
 # Local dev / QA scaffolding — not part of the deliverable
 preview_server.py
 shot.py

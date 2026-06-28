@@ -235,6 +235,10 @@ h1, h2, h3 { line-height: 1.08; }
 .chip { display: inline-flex; align-items: center; gap: 0.5rem; font-size: var(--step--1); font-weight: 600; color: var(--ink-2); }
 .chip svg { width: 1.05em; color: var(--green); flex: 0 0 auto; }
 
+/* Solo hero — single deliberate column until real hero photos land.
+   (Original media slot lives on the `photos-pending` branch.) */
+.hero__lead { max-width: 56rem; }
+
 @media (max-width: 920px) {
   .hero__grid { grid-template-columns: 1fr; }
   .hero__media { order: -1; }
@@ -348,6 +352,10 @@ h1, h2, h3 { line-height: 1.08; }
 .checklist li { display: flex; gap: 0.8rem; align-items: flex-start; color: var(--ink-2); }
 .checklist svg { width: 1.4em; height: 1.4em; color: var(--green); flex: 0 0 auto; margin-top: 2px; }
 .checklist b { color: var(--ink); font-weight: 700; }
+/* Two-column benefit grid — used where the why-us media split used to be. */
+.checklist--grid { grid-template-columns: 1fr 1fr; gap: 1.3rem 2.6rem; margin-top: clamp(1.6rem, 1rem + 1.6vw, 2.4rem); }
+.checklist--grid li { font-size: var(--step-1); }
+@media (max-width: 720px) { .checklist--grid { grid-template-columns: 1fr; } }
 .media-card {
   aspect-ratio: 5/4; border-radius: var(--radius); border: 1px solid var(--line);
   background: linear-gradient(155deg, var(--bg-3), var(--bg-1)); box-shadow: var(--shadow-lg);

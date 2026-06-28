@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cinzel:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=5">
+  <link rel="stylesheet" href="css/styles.css?v=6">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/favicon.png">
 </head>
@@ -53,7 +53,9 @@
     <!-- ============ HERO ============ -->
     <section class="hero">
       <div class="container hero__inner">
-        <div class="hero__grid">
+        <!-- Photo slot (hero before/after) removed until real job photos land.
+             Original slider markup preserved on the `photos-pending` branch. -->
+        <div class="hero__lead">
           <div class="hero__copy">
             <span class="eyebrow reveal">Cambridge, MN &amp; the North Metro</span>
             <h1 class="display reveal" data-delay="1">Your property,<br><em>brought back to new.</em></h1>
@@ -70,18 +72,6 @@
               <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Free, no-pressure estimates</li>
               <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>On time &amp; tidy</li>
             </ul>
-          </div>
-
-          <!-- HERO MEDIA: before/after. Swap the two .ba__pane backgrounds for real job photos. -->
-          <div class="hero__media reveal" data-delay="2">
-            <figure class="ba" data-ba>
-              <div class="ba__pane ba__pane--after" data-photo="After photo"></div>
-              <div class="ba__pane ba__pane--before" data-photo="Before photo"></div>
-              <span class="ba__tag ba__tag--before">Before</span>
-              <span class="ba__tag ba__tag--after">After</span>
-              <span class="ba__handle" aria-hidden="true"></span>
-              <input class="ba__range" type="range" min="0" max="100" value="50" data-ba-range aria-label="Drag to compare the before and after">
-            </figure>
           </div>
         </div>
       </div>
@@ -168,21 +158,18 @@
     <!-- ============ WHY GOLDSMITH ============ -->
     <section class="section section--alt" id="why">
       <div class="container">
-        <div class="split split--rev">
-          <div class="split__media reveal">
-            <div class="media-card" data-photo="Owner / crew on-site photo"></div>
-          </div>
-          <div class="split__copy reveal" data-delay="1">
-            <span class="eyebrow">Why Goldsmith</span>
-            <h2 class="display" style="font-size:var(--step-3);margin-top:.7rem">A local name that shows up and finishes the job</h2>
-            <ul class="checklist">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>You deal with the owner</b>, not a call center. Straight answers, fair quotes.</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>On time, every time.</b> We give you a window and we keep it.</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>Tidy by default.</b> Hoses coiled, debris hauled, nothing for you to redo.</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>One crew for the whole exterior.</b> Fewer calls, one point of contact.</span></li>
-            </ul>
-          </div>
+        <!-- Photo slot (owner / crew on-site) removed until a real photo lands.
+             Original media split preserved on the `photos-pending` branch. -->
+        <div class="section__head reveal" style="margin-bottom:clamp(1.6rem,1rem + 1.8vw,2.6rem)">
+          <span class="eyebrow">Why Goldsmith</span>
+          <h2 class="display" style="font-size:var(--step-3);margin-top:.7rem">A local name that shows up and finishes the job</h2>
         </div>
+        <ul class="checklist checklist--grid reveal" data-delay="1">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>You deal with the owner</b>, not a call center. Straight answers, fair quotes.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>On time, every time.</b> We give you a window and we keep it.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>Tidy by default.</b> Hoses coiled, debris hauled, nothing for you to redo.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>One crew for the whole exterior.</b> Fewer calls, one point of contact.</span></li>
+        </ul>
 
         <div class="callout reveal mt-2" style="margin-top:var(--section-y)">
           <div class="callout__badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.4 8.3-8 10-4.6-1.7-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>

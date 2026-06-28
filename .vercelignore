@@ -1,0 +1,5 @@
+# Dev / QA scaffolding — never part of the public deploy
+*.py
+__pycache__/
+.DS_Store
+README.md
